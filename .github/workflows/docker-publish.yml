@@ -31,7 +31,7 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
       - name: Build image
-        run: docker build --build-arg GITHUB_WORKSPACE=$GITHUB_WORKSPACE --build-arg IMAGE="docker.pkg.github.com/thirsty2/iverilog/iverilog-make:dockerfile-with-github-actions" . --file alpine312/Dockerfile --tag $IMAGE_NAME
+        run: docker build --build-arg GITHUB_WORKSPACE=$GITHUB_WORKSPACE --build-arg IMAGE="docker.pkg.github.com/thirsty2/iverilog/iverilog:dockerfile-with-github-actions" . --file alpine312/Dockerfile --tag $IMAGE_NAME
 
 
       - name: Push images
