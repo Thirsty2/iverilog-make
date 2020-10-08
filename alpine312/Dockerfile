@@ -5,6 +5,8 @@ ARG IMAGE="iverilog"
 
 FROM $IMAGE as base
 
+USER root
+
 RUN apk add --no-cache \
         make
 
